@@ -297,9 +297,13 @@ const App: React.FC = () => {
             </motion.div>
           </div>
           
-          <div className="lg:col-span-4 hidden lg:block">
-            <TechCard className="aspect-[4/5] flex flex-col justify-between p-10">
-              <div className="flex justify-between items-start">
+          <div className="lg:col-span-4">
+            <TechCard className="aspect-[4/5] flex flex-col justify-between p-10 relative overflow-hidden group">
+              <div className="absolute inset-0 z-0 pointer-events-none">
+                 <img src={PERSONAL_INFO.profileImage} alt="Profile" className="w-full h-full object-cover object-top opacity-80 group-hover:scale-105 transition-all duration-700" />
+                 <div className="absolute inset-0 bg-gradient-to-t from-slate-950 via-transparent to-transparent opacity-80" />
+              </div>
+              <div className="relative z-10 flex justify-between items-start">
                 <div className="p-4 bg-cyan-500/10 border border-cyan-500/40">
                    <Monitor className="text-cyan-500" size={40} />
                 </div>
@@ -549,13 +553,14 @@ const App: React.FC = () => {
               <a href={`tel:${PERSONAL_INFO.phone}`} className="group p-6 border-2 border-cyan-500/40 text-cyan-500 hover:bg-cyan-500 hover:text-slate-950 transition-all flex items-center justify-center shadow-xl">
                 <Phone size={24} className="group-hover:scale-110 transition-transform" />
               </a>
-              <button 
-                onClick={() => window.print()} 
+              <a 
+                href={PERSONAL_INFO.resume}
+                download
                 className="group p-6 border-2 border-cyan-500/40 text-cyan-500 hover:bg-cyan-500 hover:text-slate-950 transition-all flex items-center justify-center gap-3 font-black italic uppercase tracking-widest shadow-xl"
               >
                 <Download size={24} className="group-hover:translate-y-1 transition-transform" />
-                <span className="hidden sm:inline">GENERATE_HARDCOPY</span>
-              </button>
+                <span className="hidden sm:inline">DOWNLOAD_RESUME</span>
+              </a>
             </div>
           </div>
 
@@ -574,7 +579,7 @@ const App: React.FC = () => {
               <p className="text-cyan-300 uppercase">IDENT_01: {PERSONAL_INFO.fullName}</p>
               <p className="text-cyan-300 uppercase">EXPER_01: {EXPERIENCES[0].role}</p>
               <p className="text-cyan-300 uppercase">COMP_01: {EXPERIENCES[0].company}</p>
-              <p className="text-green-500/80 uppercase tracking-widest">>>> CONNECTION_ESTABLISHED_MES</p>
+              <p className="text-green-500/80 uppercase tracking-widest">CONNECTION_ESTABLISHED_MES</p>
               <div className="flex items-center gap-2">
                 <span className="text-cyan-500">vk@node:~$</span>
                 <span className="w-3 h-5 bg-cyan-500/80 animate-pulse" />

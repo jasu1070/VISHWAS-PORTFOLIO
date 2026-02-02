@@ -7,7 +7,9 @@ export const PERSONAL_INFO = {
   email: "Vishwask45@gmail.com",
   phone: "9016597932",
   address: "155-K, Nava Harjanvas, Badodara, Arvalli, Gujarat - 383315",
-  objective: "To work with renowned organization this gives me an opportunity to learn and growth with the industry. A professional challenging career, to work with full dedication, gaining professional skill and enrich my experience."
+  objective: "To work with renowned organization this gives me an opportunity to learn and growth with the industry. A professional challenging career, to work with full dedication, gaining professional skill and enrich my experience.",
+  resume: "/VISHWAS-PORTFOLIO/resume.pdf", 
+  profileImage: "/VISHWAS-PORTFOLIO/profile.jpg"
 };
 
 export const PERSONAL_DETAILS: PersonalDetail[] = [
